@@ -21,6 +21,10 @@ test.clj:  8: ;; FIXME this blows up from time to time
 test.clj: 11: ;; OPTIMIZE this is doing a lot of useless computations light now
 ```
 
+You can also specify exactly what annotations to display:
+
+    $ lein annotations FIXME REFACTOR HACK
+
 ## License
 
 Copyright © 2013 Bozhidar Batsov
