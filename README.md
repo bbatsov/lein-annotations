@@ -7,7 +7,7 @@ It's inspired by the similar `rake notes` functionality available in Ruby on Rai
 
 ## Usage
 
-Put `[lein-annotations "0.1.0-SNAPSHOT"]` into the `:plugins` vector
+Put `[lein-annotations "0.1.0"]` into the `:plugins` vector
 of your `project.clj`.
 
 Afterwards just run:
