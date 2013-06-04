@@ -1,31 +1,35 @@
 (ns leiningen.annotations
-  (:require (clojure [string :as str])
+  (:require [clojure.string :as str]
             [clojure.java.io :as io]))
 
 (def default-annotations ["TODO" "FIXME" "OPTIMIZE" "REFACTOR"])
 
-(defn- project-files
+(defn project-files
   "Obtain a list of all Clojure files in the current project."
   [project-dir]
   (filter #(.endsWith (.getName %) ".clj")
           (file-seq (io/file project-dir))))
 
-(defn- relative-path
+(defn relative-path
   "Obtain relative path to file."
   [root file]
   (str/replace-first (.getAbsolutePath file) (str root java.io.File/separator) ""))
 
-(defn- search-re [targets]
+(defn search-re [targets]
   (re-pattern (format ";+\\s*(%s)" (str/join "|" targets))))
 
-(defn- process-file
+(defn display-annotation
+  [path line-num line]
+  (println (format "%s:%3d: %s" path (inc line-num) line)))
+
+(defn process-file
   "Looks for comment annotations in file."
   [root file targets]
   (doseq [[line-num line] (map-indexed vector (line-seq (io/reader file)))]
     (when (re-find (search-re targets) line)
-      (println (format "%s:%3d: %s" (relative-path root file) (inc line-num) line)))))
+      (display-annotation (relative-path root file) (inc line-num) line))))
 
-(defn- target-annotations [target]
+(defn target-annotations [target]
   (or target
       default-annotations))
 
