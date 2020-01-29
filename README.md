@@ -18,7 +18,7 @@ You'll see a summary like:
 
 ```
 test.clj:  8: ;; FIXME this blows up from time to time
-test.clj: 11: ;; OPTIMIZE this is doing a lot of useless computations light now
+test.clj: 11: ;; OPTIMIZE this is doing a lot of useless computations right now
 ```
 
 You can also specify exactly what annotations to display:
