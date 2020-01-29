@@ -7,7 +7,7 @@
 (defn project-files
   "Obtain a list of all Clojure files in the current project."
   [project-dir]
-  (filter #(.endsWith (.getName %) ".clj")
+  (filter #(re-matches #".+\.clj(|s|c)$" (.getName %))
           (file-seq (io/file project-dir))))
 
 (defn relative-path
