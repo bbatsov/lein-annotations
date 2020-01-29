@@ -1,4 +1,4 @@
-(defproject lein-annotations "0.1.0"
+(defproject lein-annotations "0.2.0"
   :description "Displays all comment annotations in the project."
   :url "http://github.com/bbatsov/lein-annotations"
   :license {:name "Eclipse Public License"

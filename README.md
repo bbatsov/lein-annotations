@@ -7,7 +7,7 @@ It's inspired by the similar `rake notes` functionality available in Ruby on Rai
 
 ## Usage
 
-Put `[lein-annotations "0.1.0"]` into the `:plugins` vector
+Put `[lein-annotations "0.2.0"]` into the `:plugins` vector
 of your `project.clj`.
 
 Afterwards just run:
@@ -27,6 +27,6 @@ You can also specify exactly what annotations to display:
 
 ## License
 
-Copyright © 2013 Bozhidar Batsov
+Copyright © 2013-2020 Bozhidar Batsov
 
 Distributed under the Eclipse Public License, the same as Clojure.
